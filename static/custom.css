@@ -1,3 +1,48 @@
+@font-face {
+    font-family: 'Gilroy';
+    src: url('Gilroy-Regular.eot');
+    src: local('Gilroy Regular'), local('Gilroy-Regular'),
+        url('gilroy/Gilroy-Regular.eot?#iefix') format('embedded-opentype'),
+        url('gilroy/Gilroy-Regular.woff2') format('woff2'),
+        url('gilroy/Gilroy-Regular.woff') format('woff'),
+        url('gilroy/Gilroy-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gilroy';
+    src: url('Gilroy-Semibold.eot');
+    src: local('Gilroy Semibold'), local('Gilroy-Semibold'),
+        url('gilroy/Gilroy-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('gilroy/Gilroy-Semibold.woff2') format('woff2'),
+        url('gilroy/Gilroy-Semibold.woff') format('woff'),
+        url('gilroy/Gilroy-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gilroy';
+    src: url('Gilroy-Medium.eot');
+    src: local('Gilroy Medium'), local('Gilroy-Medium'),
+        url('gilroy/Gilroy-Medium.eot?#iefix') format('embedded-opentype'),
+        url('gilroy/Gilroy-Medium.woff2') format('woff2'),
+        url('gilroy/Gilroy-Medium.woff') format('woff'),
+        url('gilroy/Gilroy-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gilroy';
+    src: url('Gilroy-Extrabold.eot');
+    src: local('Gilroy Extrabold'), local('Gilroy-Extrabold'),
+        url('gilroy/Gilroy-Extrabold.eot?#iefix') format('embedded-opentype'),
+        url('gilroy/Gilroy-Extrabold.woff2') format('woff2'),
+        url('gilroy/Gilroy-Extrabold.woff') format('woff'),
+        url('gilroy/Gilroy-Extrabold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
 html, body {
 	height: 100%;
 }
@@ -6,6 +51,7 @@ body {
 	flex-direction: column;
 	margin: 0;
 	background: #f7f7f7;
+	font-family: Gilroy, Arial, Helvetica;
 }
 #wrapper {
 	flex: 1 0 auto;
@@ -27,6 +73,18 @@ footer {
 
 /* Атомарные классы */
 
+.wide {
+	margin: 200px 0;
+}
+
+.bimg, .bimg img {
+	display: block;
+	width: 100%;
+}
+
+.col .title {
+	text-align: left;
+}
 .title {
 	text-align: center;
 }
@@ -41,10 +99,23 @@ footer {
 	margin: 0;
 }
 
+.tab-area .tab-page .tab-item {
+	display: none;
+}
+.tab-area .tab-item.active {
+	display: block;
+}
+.tab-area .tab-label {
+	display: flex;
+}
+
 /* Основное */
 
 header {
 	background: #ccc;
+	background-image: url('images/header.png');
+	background-repeat: no-repeat;
+	background-position: bottom right;
 }
 header .row.c1 {
 	display: flex;
@@ -57,6 +128,9 @@ header .sign_in {
 	background: #212121;
 	color: #fff;
 	text-decoration: none;
+	font-weight: 600;
+	font-size: 1.1em;
+	padding: 15px 40px;
 }
 header nav {
 	display: flex;
@@ -64,8 +138,10 @@ header nav {
 header nav a {
 	color: #212121;
 	text-decoration: none;
-	margin: 10px;
+	margin: 10px 20px;
 	display: block;
+	font-weight: 600;
+	font-size: 1.1em;
 }
 header nav a:hover {
 	text-decoration: underline;
@@ -103,6 +179,75 @@ header nav a:hover {
 	display: grid;
 	grid-template-columns: 2fr 3fr;
 	gap: 30px;
+}
+
+#houses .wrap {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 24px;
+}
+
+#blog .wrap {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 24px;
+}
+#blog .inner {
+	padding: 24px;
+	border-width: 0 1px 1px 1px;
+	border-style: solid;
+	flex-grow: 1;
+	border-color: #ccc;
+}
+#blog .item {
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+}
+#blog .item.active {
+	background: #212121;
+	color: #808080;
+}
+#blog .item.active .inner {
+	border-width: 0;
+}
+
+#reviews .review_slider {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 24px;
+}
+#reviews .item {
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: 32px;
+}
+
+#staff .wrap {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 24px;
+}
+#staff .item {
+	background: #fff;
+	text-align: center;
+	border: 1px solid #ccc;
+	padding: 24px;
+}
+#staff .preview {
+	border-radius: 50%;
+}
+
+#faq {}
+
+#get_in_touch {}
+
+#subscribe {}
+
+footer .container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 50px;
 }
 
 /* Адаптив */
