@@ -19,4 +19,10 @@ $(document).ready(function() {
 		$(this).closest('.tab-area').find('.tab-page .tab-item.c'+tabCount).addClass('active').siblings().removeClass('active');
 	});
 
+	// FAQ
+	$(".accordion .click").click(function(event) {
+		$(this).closest('.item').addClass('active').siblings().removeClass('active');
+		
+	});
+
 });

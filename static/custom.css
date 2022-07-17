@@ -50,16 +50,12 @@ body {
 	display: flex;
 	flex-direction: column;
 	margin: 0;
-	background: #f7f7f7;
-	font-family: Gilroy, Arial, Helvetica;
 }
 #wrapper {
 	flex: 1 0 auto;
 }
 footer {
 	flex: 0 0 auto;
-	background: #212121;
-	color: #807F7E;
 }
 .wide {
 	width: 100%;
@@ -82,20 +78,59 @@ footer {
 	width: 100%;
 }
 
+h1 {
+	font-size: 4em;
+	margin: 0 0 32px;
+}
+p {
+	font-size: 18px;
+	line-height: 26px;
+	color: #262626;
+}
+
+.field {
+	border: 2px solid #212121;
+	padding: 15px 20px;
+	display: block;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: Gilroy, Arial, Helvetica;
+	font-size: 1em;
+}
+
+.btn {
+	background: #212121;
+	color: #fff;
+	text-decoration: none;
+	font-size: 24px;
+	line-height: 32px;
+	display: block;
+	padding: 12px 10px;
+	border: 0;
+}
+.btn.more {
+	display: inline-block;
+	padding: 16px 24px;
+}
+
 .col .title {
 	text-align: left;
 }
 .title {
 	text-align: center;
+	margin-bottom: 64px;
 }
 .title .descr {
 	color: #808080;
 	text-transform: uppercase;
-	letter-spacing: 0.2em;
+	letter-spacing: 4px;
+	font-size: 1.1em;
+	font-weight: 600;
 }
 .title h2 {
 	color: #212121;
-	font-size: 2em;
+	font-size: 3.5em;
 	margin: 0;
 }
 
@@ -108,8 +143,39 @@ footer {
 .tab-area .tab-label {
 	display: flex;
 }
+.tab-area .tab-page {
+	background: #fff;
+	padding: 40px;
+}
+.tab-area .tab-label .tab-item {
+	padding: 16px;
+	background: #fff;
+	cursor: pointer;
+}
+.tab-area .tab-label .tab-item.active span {
+	background: #212121;
+	color: #fff;
+}
+.tab-area .tab-label .tab-item span {
+	display: block;
+	padding: 12px 24px;
+	font-weight: 600;
+	color: #808080;
+}
+
+.accordion .hidden_area {
+	display: none;
+}
+.accordion .item.active .hidden_area {
+	display: block;
+}
 
 /* Основное */
+
+body {
+	background: #f7f7f7;
+	font-family: Gilroy, Arial, Helvetica;
+}
 
 header {
 	background: #ccc;
@@ -117,12 +183,20 @@ header {
 	background-repeat: no-repeat;
 	background-position: bottom right;
 }
+header .row.c2 {
+	margin-bottom: 48px;
+}
+header .row.c2 p {
+	font-size: 1.5em;
+	line-height: 32px;
+}
 header .row.c1 {
 	display: flex;
 	justify-content: space-between;
 	padding-top: 15px;
 	padding-bottom: 15px;
 	align-items: center;
+	margin-bottom: 130px;
 }
 header .sign_in {
 	background: #212121;
@@ -147,15 +221,46 @@ header nav a:hover {
 	text-decoration: underline;
 }
 
+
+
 #about_us .container {
 	display: grid;
 	grid-template-columns: 3fr 2fr;
 	gap: 30px;
 }
+#about_us .col.c2 {
+	position: relative;
+}
+#about_us .col.c2 .line {
+	content: '';
+	display: block;
+	background: #f7f7f7;
+	position: absolute;
+}
+#about_us .col.c2 .line.c1 {
+	width: 17px;
+	height: 100%;
+	top: 0;
+	left: 250px;
+}
+#about_us .col.c2 .line.c2 {
+	width: 250px;
+	height: 17px;
+	top: 345px;
+	left: 0;
+}
+#about_us .col.c2 .line.c3 {
+	width: 250px;
+	height: 17px;
+	top: 170px;
+	right: 0;
+}
 
 #digits {
 	background: #212121;
 	color: #808080;
+	padding-top: 64px;
+	padding-bottom: 64px;
 }
 #digits .container {
 	display: flex;
@@ -165,7 +270,10 @@ header nav a:hover {
 #digits .digit {
 	color: #fff;
 	font-weight: bold;
-	font-size: 3em;
+	font-size: 3.5em;
+}
+#digits .descr {
+	font-size: 1.1em;
 }
 
 #service .wrap {
@@ -174,23 +282,86 @@ header nav a:hover {
 	gap: 15px;
 	text-align: center;
 }
+#service .item {
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: 24px;
+}
+#service .item h3 {
+	color: #212121;
+	font-size: 1.5em;
+}
+#service .item p {
+	color: #808080;
+}
+#service .item.active {
+	background: #212121;
+	border: 0;
+}
+#service .item.active h3 {
+	color: #fff;
+}
+#service .item.active .btn {
+	background: #fff;
+	color: #212121;
+}
 
 #process .container {
 	display: grid;
 	grid-template-columns: 2fr 3fr;
 	gap: 30px;
 }
+#process .item {
+	display: flex;
+	margin-bottom: 64px;
+}
+#process .digit {
+	border: 4px solid #212121;
+	font-size: 40px;
+	font-weight: 800;
+	margin-right: 24px;
+	padding: 0 35px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#process h3 {
+	margin-top: 0;
+}
+#process p {
+	margin-bottom: 0;
+}
 
 #houses .wrap {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 24px;
+	margin-bottom: 40px;
+}
+#houses .item {
+	position: relative;
+}
+#houses .item .status {
+	background: #212121;
+	color: #fff;
+	top: 5px;
+	left: 5px;
+	position: absolute;
+	padding: 5px 10px;
+}
+#houses .inner {
+	background: #fff;
+	border-width: 0 1px 1px 1px;
+	border-style: solid;
+	border-color: #ccc;
+	padding: 25px;
 }
 
 #blog .wrap {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 24px;
+	margin-bottom: 40px;
 }
 #blog .inner {
 	padding: 24px;
@@ -216,6 +387,7 @@ header nav a:hover {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 24px;
+	margin-bottom: 40px;
 }
 #reviews .item {
 	background: #fff;
@@ -227,6 +399,7 @@ header nav a:hover {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 24px;
+	margin-bottom: 40px;
 }
 #staff .item {
 	background: #fff;
@@ -238,16 +411,81 @@ header nav a:hover {
 	border-radius: 50%;
 }
 
-#faq {}
+#faq .wrap {
+	display: grid;
+	grid-template-columns: 3fr 2fr;
+	gap: 80px;
+	margin-bottom: 40px;
+}
+#faq .item {
+	border-bottom: 1px solid #808080;
+	padding-bottom: 24px;
+	margin-bottom: 24px;
+}
+#faq .click {
+	font-weight: 800;
+	font-size: 1.1em;
+	cursor: pointer;
+}
+#faq .hidden_area {
+	margin-top: 16px;
+	color: #808080;
+	font-size: 1em;
+	line-height: 24px;
+}
 
-#get_in_touch {}
+#get_in_touch .container {
+	display: grid;
+	grid-template-columns: 2fr 3fr;
+	gap: 80px;
+}
+#get_in_touch #touch_form {
+	background: #fff;
+	padding: 32px;
+	border: 1px solid #ccc;
+}
 
-#subscribe {}
+#subscribe .container {
+	max-width: 800px;
+	text-align: center;
+}
+#subscribe #subform {
+	position: relative;
+	margin-top: 64px;
+}
+#subscribe #subform .btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+#subscribe .field {
+	max-width: 800px;
+	background: transparent;
+}
 
+
+footer {
+	background: #212121;
+	color: #808080;
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
 footer .container {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 50px;
+}
+footer h3 {
+	color: #fff;
+}
+footer a {
+	color: #808080;
+	text-decoration: none;
+	display: block;
+	margin: 8px 0;
+}
+footer a:hover {
+	text-decoration: underline;
 }
 
 /* Адаптив */
